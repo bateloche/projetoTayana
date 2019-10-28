@@ -1,9 +1,8 @@
 package br.com.tayana.business;
 
 import java.time.LocalDate;
-import java.util.HashMap;
+import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Map;
 import java.util.NavigableMap;
 import java.util.TreeMap;
 
@@ -24,6 +23,7 @@ public class CampanhaLogicBusiness {
 			LocalDate maiorData = map.lastKey();
 			if(dataMenorOuIgual(maiorData, campanhaPreExistente.getDataFim())) {
 				campanhaPreExistente.setDataFim(maiorData.plusDays(1));
+				campanhaPreExistente.setDataModificacao(LocalDateTime.now());
 			}
 			map.put(campanhaPreExistente.getDataFim(), campanhaPreExistente);
 		}

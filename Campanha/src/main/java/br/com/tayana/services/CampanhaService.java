@@ -2,6 +2,7 @@ package br.com.tayana.services;
 
 import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -34,7 +35,13 @@ public class CampanhaService {
 		return obj;
 	}
 	
+	public List<Campanha> findByDataModificacaoGreaterThanOrEqual(Instant dataModificacao){
+		List<Campanha> obj = repository.findByModificacaoGreaterThanOrEqual(dataModificacao);
+		return obj;
+	}
+	
 	public Campanha insert(Campanha obj) {
+		obj.setDataModificacao(LocalDateTime.now());
 		return repository.save(obj);
 	}
 	

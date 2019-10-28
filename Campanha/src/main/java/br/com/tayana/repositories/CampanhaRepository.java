@@ -17,6 +17,9 @@ public interface CampanhaRepository extends MongoRepository<Campanha, Long> {
 	@Query("{'dataFim':{$gte:?0}}")
 	public List<Campanha> findByDataFimGreaterThanOrEqual(Instant dataFim, Sort sort);
 	
+	@Query("{'dataModificacao':{$gte:?0}}")
+	public List<Campanha> findByModificacaoGreaterThanOrEqual(Instant dataModificacao);
+	
 	@Query( "{ " + 
 			"   idTime: '?0', " + 
 			"	dataInicio: { $lte: ?1 }, " + 

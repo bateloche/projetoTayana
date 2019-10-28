@@ -1,6 +1,7 @@
 package br.com.tayana.model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class CampanhaResponse {
 	
@@ -9,6 +10,7 @@ public class CampanhaResponse {
 	private String nome;
 	private LocalDate dataInicio;
 	private LocalDate dataFim;
+	private LocalDateTime dataModificacao;
 	
 	public long getId() {
 		return id;
@@ -43,5 +45,11 @@ public class CampanhaResponse {
 	public void setDataFim(LocalDate dataFim) {
 		this.dataFim = dataFim;
 	}
-
+	
+	public LocalDateTime getDataModificacao() {
+		return dataModificacao;
+	}
+	public void setDataModificacao(LocalDateTime dataModificacao) {
+		this.dataModificacao = dataModificacao;
+	}
 }

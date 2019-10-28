@@ -1,5 +1,7 @@
 package br.com.tayana.command.model;
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.tayana.command.CampanhaLogicCommand;
@@ -25,6 +27,7 @@ public class UpdateCampanhaCmd implements CampanhaLogicCommand{
 		campanha.setId(request.getId());
 		campanha.setIdTime(campanha.getIdTime()); 
 		campanha.setNome(request.getNome());
+		campanha.setDataModificacao(LocalDateTime.now());
 		
 		campanha = service.update(campanha);
 		
@@ -34,6 +37,7 @@ public class UpdateCampanhaCmd implements CampanhaLogicCommand{
 		response.setIdTime(campanha.getIdTime().getId());
 		response.setDataInicio(campanha.getDataInicio());
 		response.setDataFim(campanha.getDataFim());
+		response.setDataModificacao(campanha.getDataModificacao());
 	}
 	
 	public CampanhaRequest getRequest() {

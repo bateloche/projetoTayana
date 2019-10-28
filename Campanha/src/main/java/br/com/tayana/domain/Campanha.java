@@ -2,6 +2,8 @@ package br.com.tayana.domain;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,6 +27,7 @@ public class Campanha implements Serializable {
 	private String nome;
 	private LocalDate dataInicio;
 	private LocalDate dataFim;
+	private LocalDateTime dataModificacao;
 
 	public long getId() {
 		return id;
@@ -64,5 +67,13 @@ public class Campanha implements Serializable {
 
 	public void setDataFim(LocalDate dataFim) {
 		this.dataFim = dataFim;
+	}
+
+	public LocalDateTime getDataModificacao() {
+		return dataModificacao;
+	}
+
+	public void setDataModificacao(LocalDateTime dataModificacao) {
+		this.dataModificacao = dataModificacao;
 	}
 }
