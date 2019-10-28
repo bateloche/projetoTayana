@@ -44,8 +44,6 @@ public class CampanhaServiceTests {
 	@DisplayName("Find deve retornar erro caso repositório não retorne resultados.")
 	@Test
 	void FindDeveRetornarErroCasoRepositorioNaoRetorneResultados() {
-		when(repository.findById(1l)).then(null);
-		
 		assertThrows(ObjectNotFoundException.class, () -> {
 			campanhaService.find(1);
 		});
